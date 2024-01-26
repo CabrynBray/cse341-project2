@@ -18,59 +18,56 @@ const getSingle = async (req, res) => {
     });
 };
 
-// const createCar = async (req, res) => {
-//     const cars = {
-//         Make: req.body.Make,
-//         Modle: req.body.Modle,
-//         Year: req.body.Year,
-//         Price: req.body.Price,
-//         Miles: req.body.Miles,
-//         Color: req.body.Color
-//     };
-//     const response = await mongodb.getDatabase().db().collection('contacts').insertOne(user);
-//     if (response.acknowledged) {
-//         res.status(204).send();
-//     } else {
-//         res.status(500).json(response.error || 'Some error occurred while updating the user.');
-//     }
-// };
+const createCar = async (req, res) => {
+    const car = {
+        Make: req.body.Make,
+        Modle: req.body.Modle,
+        Year: req.body.Year,
+        Price: req.body.Price,
+        Miles: req.body.Miles,
+        Color: req.body.Color
+    };
+    const response = await mongodb.getDatabase().db().collection('cars').insertOne(car);
+    if (response.acknowledged) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occurred while creating the car.');
+    }
+};
 
 
-// const updateUser = async (req, res) => {
-//     const userId = new ObjectId(req.params.id);
-//     const user = {
-//         // username: req.body.username,
-//         // email: req.body.email,
-//         // name: req.body.name,
-//         // ipaddress: req.body.ipaddress
-//         firstName: req.body.firstName,
-//         lastName: req.body.lastName,
-//         email: req.body.email,
-//         favoriteColor: req.body.favoriteColor,
-//         birthday: req.body.birthday
-//     };
-//     const response = await mongodb.getDatabase().db().collection('contacts').replaceOne({_id: userId}, user);
-//     if (response.modifiedCount > 0) {
-//         res.status(204).send();
-//     } else {
-//         res.status(500).json(response.error || 'Some error occured while updating the user.');
-//     }
-// };
+const updateCar = async (req, res) => {
+    const carId = new ObjectId(req.params.id);
+    const car = {
+        Make: req.body.Make,
+        Modle: req.body.Modle,
+        Year: req.body.Year,
+        Price: req.body.Price,
+        Miles: req.body.Miles,
+        Color: req.body.Color
+    };
+    const response = await mongodb.getDatabase().db().collection('cars').replaceOne({_id: carId}, car);
+    if (response.modifiedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occured while updating the car.');
+    }
+};
 
-// const deleteUser = async (req, res) => {
-//     const userId = new ObjectId(req.params.id);
-//     const response = await mongodb.getDatabase().db().collection('contacts').deleteOne({_id: userId});
-//     if (response.deleteCount > 0) {
-//         res.status(204).send();
-//     } else {
-//         res.status(500).json(response.error || 'Some error occurred while deleting the user.');
-//     }
-// };
+const deleteCar = async (req, res) => {
+    const carId = new ObjectId(req.params.id);
+    const response = await mongodb.getDatabase().db().collection('cars').deleteOne({_id: carId});
+    if (response.deleteCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occurred while deleting the car.');
+    }
+};
 
 module.exports = {
     getAll,
     getSingle,
-    // createUser,
-    // updateUser,
-    // deleteUser
+    createCar,
+    updateCar,
+    deleteCar
 };

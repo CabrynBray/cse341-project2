@@ -7,10 +7,10 @@ router.get('/', carsController.getAll);
 
 router.get('/:id', carsController.getSingle);
 
-// router.post('/', carsController.createUser);
+router.post('/', carsController.createCar);
 
-// router.put('/:id', carsController.updateUser);
+router.put('/:id', carsController.updateCar);
 
-// router.delete('/:id', carsController.deleteUser);
+router.delete('/:id', carsController.deleteCar);
 
 module.exports = router;

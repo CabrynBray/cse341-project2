@@ -1,0 +1,5 @@
+### Get welcome
+GET http://localhost:4040 HTTP/1.1
+
+### Get all cars 
+GET http://localhost:4040/cars HTTP/1.1
