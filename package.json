@@ -1,0 +1,19 @@
+{
+  "name": "cse341-project2",
+  "version": "1.0.0",
+  "description": "Progect for week 3 & 4",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CabrynBray/cse341-project2.git"
+  },
+  "author": "Cabryn Bray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CabrynBray/cse341-project2/issues"
+  },
+  "homepage": "https://github.com/CabrynBray/cse341-project2#readme"
+}
