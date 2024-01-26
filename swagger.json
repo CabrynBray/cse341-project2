@@ -5,7 +5,7 @@
     "description": "Cars Api",
     "version": "1.0.0"
   },
-  "host": "localhost:4040",
+  "host": "https://cse341-project2-9eq3.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
