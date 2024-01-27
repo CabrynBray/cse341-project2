@@ -1,5 +1,71 @@
 ### Get welcome
 GET http://localhost:4040 HTTP/1.1
 
+### Get welcome on render.com
+GET https://cse341-project2-9eq3.onrender.com HTTP/1.1
+
 ### Get all cars 
 GET http://localhost:4040/cars HTTP/1.1
+
+### Get all cars on render.com 
+GET https://cse341-project2-9eq3.onrender.com/cars HTTP/1.1
+
+### Get car by id cars 
+GET http://localhost:4040/cars/65b391b3bf2e0f86c203d5f9 HTTP/1.1
+
+### Get car by id on render.com 
+GET https://cse341-project2-9eq3.onrender.com/cars/65b391b3bf2e0f86c203d5f9 HTTP/1.1
+
+### Post Inserts a new car into our database
+POST http://localhost:4040/cars HTTP/1.1
+Content-Type: application/json 
+{
+    "Make": "any",
+  "Modle": "any",
+  "Year": "any",
+  "Price": "any",
+  "Miles": "any",
+  "Color": "any"
+}
+
+### Post Inserts a new car into our database on render.com
+POST https://cse341-project2-9eq3.onrender.com/cars HTTP/1.1
+Content-Type: application/json 
+{
+    "Make": "any",
+  "Modle": "any",
+  "Year": "any",
+  "Price": "any",
+  "Miles": "any",
+  "Color": "any"
+}
+
+### Updates a car by their _id. 
+PUT http://localhost:4040/cars/65b391b3bf2e0f86c203d5f9
+Content-Type: application/json 
+{
+    "Make": "any",
+  "Modle": "any",
+  "Year": "any",
+  "Price": "any",
+  "Miles": "any",
+  "Color": "any"
+}
+
+### Updates a car by their _id on render.com 
+PUT https://cse341-project2-9eq3.onrender.com/cars/65b391b3bf2e0f86c203d5f9
+Content-Type: application/json 
+{
+    "Make": "any",
+  "Modle": "any",
+  "Year": "any",
+  "Price": "any",
+  "Miles": "any",
+  "Color": "any"
+}
+
+### Deletes contact by their _id 
+DELETE https://cse341-project2-9eq3.onrender.com/cars/65b391b3bf2e0f86c203d5f9
+
+### Local Host Deletes contact by their _id 
+DELETE http://localhost:4040/cars/65b391b3bf2e0f86c203d5f9
