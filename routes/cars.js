@@ -4,14 +4,21 @@ const validation = require('../middleware/validate');
 
 const carsController = require('../controllers/cars');
 
+const { isAuthenticated } = require('../middleware/authenticate');
+
 router.get('/', validation.checkMongoId, carsController.getAll);
 
-router.get('/:id', carsController.getSingle);
+router.get('/:id', validation.checkMongoId, carsController.getSingle);
 
-router.post('/', validation.checkCar, carsController.createCar);
+router.post('/', isAuthenticated, validation.checkCar, carsController.createCar);
 
-router.put('/:id', validation.checkMongoId, carsController.updateCar);
+router.put('/:id', isAuthenticated, validation.checkMongoId, carsController.updateCar);
 
-router.delete('/:id', validation.checkMongoId, carsController.deleteCar);
+router.delete('/:id', isAuthenticated, validation.checkMongoId, carsController.deleteCar);
+
+
+
+
+
 
 module.exports = router;
