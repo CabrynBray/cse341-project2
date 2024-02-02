@@ -6,7 +6,7 @@ const carsController = require('../controllers/cars');
 
 const { isAuthenticated } = require('../middleware/authenticate');
 
-router.get('/', validation.checkMongoId, carsController.getAll);
+router.get('/', carsController.getAll);
 
 router.get('/:id', validation.checkMongoId, carsController.getSingle);
 
@@ -15,9 +15,6 @@ router.post('/', isAuthenticated, validation.checkCar, carsController.createCar)
 router.put('/:id', isAuthenticated, validation.checkMongoId, carsController.updateCar);
 
 router.delete('/:id', isAuthenticated, validation.checkMongoId, carsController.deleteCar);
-
-
-
 
 
 
