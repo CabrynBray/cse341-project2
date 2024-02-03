@@ -54,13 +54,13 @@ const updateBuyer = async (req, res) => {
 
 const deleteBuyer = async (req, res) => {
     const buyerId = new ObjectId(req.params.id);
-    const response = await mongodb.getDatabase().db().collection('buyers').deleteOne({_id: buyerId});
-    if (response.deleteCount > 0) {
-        res.status(204).send();
+    const result = await mongodb.getDatabase().db().collection('buyers').deleteOne({ _id: buyerId });
+    if (result.deletedCount > 0) {
+      res.status(204).send();
     } else {
-        res.status(500).json(response.error || 'Some error occurred while deleting the buyer.');
+      res.status(500).json(response.error || 'Error occurred when deleting buyer.')
     }
-};
+  };
 
 module.exports = {
     getAll,
